@@ -19,6 +19,8 @@ func TestLogger(t *testing.T) {
 		}
 	}()
 
+	SetOutput(f)
+
 	LogLevel = LevelDebug
 	Debug("test debug, v : %+v", "value")
 	LogLevel = LevelInfo

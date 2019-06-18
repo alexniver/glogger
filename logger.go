@@ -1,6 +1,7 @@
 package logger
 
 import (
+	"io"
 	"log"
 	"runtime"
 	"time"
@@ -20,6 +21,10 @@ func init() {
 	// reset LogLevel
 	LogLevel = LevelDebug
 	log.SetFlags(0)
+}
+
+func SetOutput(w io.Writer) {
+	log.SetOutput(w)
 }
 
 func Fatal(format string, v ...interface{}) {
